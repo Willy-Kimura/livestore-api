@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->enum('type', ['Guest', 'Client'])->default('Guest')->nullable();
             $table->string('secondary_id')->unique()->nullable();
-            $table->text('fingerprint_id')->unique()->nullable();
+            $table->string('fingerprint_id')->unique()->nullable();
             $table->string('first_name')->nullable();
             $table->string('middle_name')->nullable();
             $table->string('last_name')->nullable();
