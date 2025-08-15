@@ -16,7 +16,9 @@ return new class extends Migration
         });
 
         Schema::table('order_products', function (Blueprint $table) {
-            $table->dropColumn('category_id');
+            if (Schema::hasColumn('order_products', 'category_id')) {
+                $table->dropColumn('category_id');
+            }
         });
     }
 
