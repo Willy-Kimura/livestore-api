@@ -9,7 +9,6 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
 
 Route::post('auth', [AuthController::class, 'login']);
 Route::resource('brand-categories', BrandCategoryController::class);
@@ -30,7 +29,3 @@ Route::post('brand-categories/populate', [BrandCategoryController::class, 'popul
 Route::post('products/populate', [ProductController::class, 'populate']);
 Route::post('product-brands/update', [ProductController::class, 'updateBrands']);
 Route::post('products/update', [ProductController::class, 'updateProducts']);
-
-Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
-    return $request->user();
-});
