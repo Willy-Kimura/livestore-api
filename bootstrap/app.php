@@ -15,13 +15,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/status',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->api(prepend: [
-            \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
-        ]);
-
         $middleware->append(HandleCors::class);
-
-        // $middleware->appendToGroup('api', HandleCors::class);
 
         $middleware->alias([
             'verified' => \App\Http\Middleware\EnsureEmailIsVerified::class,
