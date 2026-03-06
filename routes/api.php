@@ -19,6 +19,7 @@ Route::resource('clients', ClientController::class);
 Route::resource('brands', BrandController::class);
 Route::resource('orders', OrderController::class);
 Route::get('product', [ProductController::class, 'search']);
+Route::get('products-list', [ProductController::class, 'indexPaginated']);
 Route::get('brands/all', [BrandController::class, 'getAllProductsByBrands']);
 Route::get('brand/{name}', [BrandController::class, 'search']);
 Route::get('brand/{name}/products', [BrandController::class, 'getProducts']);

@@ -137,6 +137,25 @@ class ProductController extends Controller
         );
     }
 
+    public function indexPaginated()
+    {
+        $rows = $request->page_rows ?? 50;
+        $query = Product::join('brands', 'brands.id', 'products.brand_id')
+            ->join('categories', 'categories.id', 'products.category_id')
+            ->select('products.*', 'brands.name as brand', 'categories.name as category')
+            ->orderBy('created_at', 'desc')
+            ->paginate($rows);
+
+        return response(
+            [
+                'status' => 'Success',
+                'message' => 'Records retrieved successfully.',
+                'data' => $query
+            ],
+            200
+        );
+    }
+
     public function show(string $id)
     {
         $record = Product::find($id);
