@@ -137,7 +137,7 @@ class ProductController extends Controller
         );
     }
 
-    public function indexPaginated()
+    public function indexPaginated(Request $request)
     {
         $rows = $request->page_rows ?? 50;
         $query = Product::join('brands', 'brands.id', 'products.brand_id')
