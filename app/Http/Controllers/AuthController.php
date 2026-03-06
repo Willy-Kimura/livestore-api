@@ -32,10 +32,8 @@ class AuthController extends Controller
             );
         }
 
-        $token = $user->createToken($user->name . '-APSX#25')->plainTextToken;
+        $token = $user->createToken($user->name)->plainTextToken;
         $user->role = 'Admin';
-
-        // Log::info('[Auth] Admin ' . $user->name . ' logged in successfully. Data: ' . $user);
 
         unset($user->id);
 
