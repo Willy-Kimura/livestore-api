@@ -20,7 +20,7 @@ class AuthController extends Controller
         $user = User::where('email', $loginUserData['email'])->first(['id', 'name', 'email', 'password']);
 
         if (!$user || !Hash::check($loginUserData['password'], $user->password)) {
-            Log::info("[Auth] Attempted admin login failed. Email: " . $loginUserData['email']);
+            // Log::info("[Auth] Attempted admin login failed. Email: " . $loginUserData['email']);
 
             return response(
                 [
@@ -35,7 +35,7 @@ class AuthController extends Controller
         $token = $user->createToken($user->name . '-APSX#25')->plainTextToken;
         $user->role = 'Admin';
 
-        Log::info('[Auth] Admin ' . $user->name . ' logged in successfully. Data: ' . $user);
+        // Log::info('[Auth] Admin ' . $user->name . ' logged in successfully. Data: ' . $user);
 
         unset($user->id);
 
