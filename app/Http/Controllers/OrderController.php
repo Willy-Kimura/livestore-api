@@ -11,9 +11,7 @@ class OrderController extends Controller
     public function index()
     {
         $rows = $request->page_rows ?? 50;
-        $query = Order::all()
-            ->orderBy('created_at', 'desc')
-            ->paginate($rows);
+        $query = Order::orderBy('created_at', 'desc')->paginate($rows);
 
         return response(
             [
