@@ -11,7 +11,7 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
-Route::post('login', [AuthController::class, 'login']);
+Route::post('auth', [AuthController::class, 'login']);
 Route::resource('brand-categories', BrandCategoryController::class);
 Route::resource('categories', CategoryController::class);
 Route::resource('discounts', DiscountController::class);
