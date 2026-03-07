@@ -8,16 +8,43 @@ use App\Models\Order;
 
 class OrderController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $rows = $request->page_rows ?? 50;
         $query = Order::orderBy('created_at', 'desc')->paginate($rows);
+
+        if (isset($request->status)) {
+            $status = $request->status;
+
+            $query = Order::where('order_status', $status)
+                ->orderBy('created_at', 'desc')
+                ->paginate($rows);
+        }
 
         return response(
             [
                 'status' => 'Success',
                 'message' => 'Records retrieved successfully.',
-                'data' =>$query
+                'data' => $query
+            ],
+            200
+        );
+    }
+
+    public function indexStatus(Request $request)
+    {
+        $rows = $request->page_rows ?? 50;
+        $status = $request->status;
+
+        $query = Order::where('order_status', $status)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return response(
+            [
+                'status' => 'Success',
+                'message' => 'Records retrieved successfully.',
+                'data' => $query
             ],
             200
         );
