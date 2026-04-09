@@ -21,11 +21,12 @@ return [
 
     'allowed_origins' => [
         'https://arumik.co.ke',
-        'https://meneja.arumik.co.ke',
-        'https://admin.tshanic.co.ke',
         'https://tshanic.co.ke',
         'http://localhost:5173',
+        'http://localhost:3000',
         'http://192.168.0.29:5173',
+        'https://meneja.arumik.co.ke',
+        'https://admin.tshanic.co.ke',
         'http://10.203.109.122:5173',
         'http://10.111.78.122:5173',
         'http://10.118.77.122:5173',
@@ -34,6 +35,7 @@ return [
         'http://10.25.105.122:5173',
         'http://10.50.122.122:5173',
         'http://10.60.70.122:5173',
+        'http://10.143.76.122:3000',
         'http://10.108.71.122:5173',
         'http://10.108.71.122:5174',
         'http://10.119.209.122:5173',
