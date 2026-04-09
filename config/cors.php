@@ -25,6 +25,7 @@ return [
         'http://localhost:5173',
         'http://localhost:3000',
         'http://192.168.0.29:5173',
+        'http://192.168.0.34:3000',
         'http://192.168.0.34:5173',
         'https://meneja.arumik.co.ke',
         'https://admin.tshanic.co.ke',
