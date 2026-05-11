@@ -125,6 +125,7 @@ class ProductController extends Controller
         $query = Product::join('brands', 'brands.id', 'products.brand_id')
             ->join('categories', 'categories.id', 'products.category_id')
             ->select('products.*', 'brands.name as brand', 'categories.name as category')
+            ->orderBy('name', 'asc')
             ->get();
 
         return response(
