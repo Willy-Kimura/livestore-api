@@ -29,6 +29,7 @@ return [
         'http://192.168.0.34:5173',
         'https://meneja.arumik.co.ke',
         'https://admin.tshanic.co.ke',
+        'https://delightfulscents.co.ke',
         'http://10.203.109.122:5173',
         'http://10.111.78.122:5173',
         'http://10.118.77.122:5173',
